@@ -25,7 +25,7 @@ CFLAGS=-c -Wall $(DEBUG)
 
 all: $(TARGET)
 
-$(TARGET): main.c
+$(TARGET): main.c threads.o
 	$(CC) main.c -o $(TARGET) $(DEBUG) $(MEMFLAGS)
 
 threads.o: threads.c threads.h

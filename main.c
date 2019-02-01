@@ -13,7 +13,6 @@
 #include "threads.h"
 
 int main () {
-  printf("Hello World");
-  hello();
+  create_and_run_threads();
   return 0;
 };

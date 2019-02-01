@@ -7,12 +7,13 @@
  * @brief Function prototypes for the threads.c file.
  */
 
-#ifndef GRAPH_H
-#define GRAPH_H
+#ifndef THREADS_H
+#define THREADS_H
 
 #include <stdio.h>
 #include "threads.c"
 
-void hello();
+static void * updateBalance();
+void create_and_run_threads();
 
-#endif //GRAPH_H
+#endif //THREADS_H
