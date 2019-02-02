@@ -1,5 +1,5 @@
 /**
- * Function prototyes and documentation for the threads.c file which 
+ * Function prototyes and documentation for the threads.c file which
  * demonstrates different uses of threading in C.
  * @file threads.h
  * @author Chris Humphreys
@@ -14,7 +14,10 @@
 #include "threads.c"
 
 static void * run_thread();
-void create_and_run_threads();
+void create_and_run_threads(int mode_selector);
 void update_balance(void* tid);
+void deposit_and_withdraw(void *tid);
+void *producer(void *ptr);
+void *consumer(void *ptr);
 
 #endif //THREADS_H

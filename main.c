@@ -5,7 +5,7 @@
  * @brief Main Driver for C Threads Program
  *
  * Main driver for the threading assignment for CS485, which simply demonstrates
- * the usage of proper threading in C. 
+ * the usage of proper threading in C.
  *
  */
 
@@ -13,7 +13,7 @@
 #include "threads.h"
 
 int main (int argc, char * argv) {
-
-  create_and_run_threads();
+  int mode_selector = 2;
+  create_and_run_threads(mode_selector);
   return 0;
 };
