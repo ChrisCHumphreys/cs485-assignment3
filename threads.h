@@ -16,7 +16,6 @@
 static void * run_thread();
 void create_and_run_threads(int mode_selector);
 void update_balance(void* tid);
-void deposit_and_withdraw(void *tid);
 void *producer(void *ptr);
 void *consumer(void *ptr);
 

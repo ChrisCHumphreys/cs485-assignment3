@@ -81,14 +81,7 @@ void update_balance(void* tid) {
   balance = read_balance;
 
   printf("%s Team Balance after update is: %d\n\n",
-	 tinfo->thread_name, balance);
-}
-
-void deposit_and_withdraw(void* tid) {
-  struct thread_info *tinfo = tid;
-  printf("%s Thread Running\n", tinfo->thread_name);
-
-
+	tinfo->thread_name, balance);
 }
 
 static void * run_thread(void* arg) {
@@ -102,11 +95,6 @@ static void * run_thread(void* arg) {
   if (tinfo->mode == 1) {
     update_balance(tinfo);
   } else {
-    //    if (tinfo->thread_name == "Deposit Thread") {
-    //pthread_mutex_init(&the_mutex, 0);
-    //pthread_cond_init(&condc, 0);
-    //pthread_cond_init(&condp, 0);
-    printf("strncmp: %d\n", strncmp(tinfo->thread_name, "Deposit Thread", 14));
     printf("thread name: %s\n\n", tinfo->thread_name);
     if (strncmp(tinfo->thread_name, "Deposit Thread", 14) == 0) {
       producer(tinfo);
@@ -162,15 +150,7 @@ void create_and_run_threads(int mode_selector) {
   for (tnum = 0; tnum < num_threads; tnum++) {
     pthread_join(tinfo[tnum].thread_id, &res);
 
-    
-    if (mode_selector != 1) {
-      pthread_cond_destroy(&condc);
-      pthread_cond_destroy(&condp);
-      pthread_mutex_destroy(&the_mutex);
-    }
-
     free(res);
   }
-
   free(tinfo);
 }
