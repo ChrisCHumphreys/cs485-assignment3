@@ -23,11 +23,12 @@ int balance = 0;            /* Global balance variable */
 struct thread_info {        /* Used as argument to thread_start */
   pthread_t thread_id;      /* ID returned by pthread_create() */
   int       thread_num;     /* From NUMBER_OF_THREADS */
-  char      thread_name[6]; /* Arbitrary Name for testing */
+  char      thread_name[32]; /* Arbitrary Name for testing */
 };
 
 /* Update Balance function: Reads the balance, increases it by 10, sleeps, and
-   then reads balance again. TODO: add documentation about printing */
+   then updates the balance.  When usleep is set to 1 the value does not always
+   update properly. */
 
 void update_balance(void* tid) {
   struct thread_info *tinfo = tid;

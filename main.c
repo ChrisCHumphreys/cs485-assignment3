@@ -12,7 +12,8 @@
 #include <stdio.h>
 #include "threads.h"
 
-int main () {
+int main (int argc, char * argv) {
+
   create_and_run_threads();
   return 0;
 };
