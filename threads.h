@@ -13,7 +13,8 @@
 #include <stdio.h>
 #include "threads.c"
 
-static void * updateBalance();
+static void * run_thread();
 void create_and_run_threads();
+void update_balance(void* tid);
 
 #endif //THREADS_H
