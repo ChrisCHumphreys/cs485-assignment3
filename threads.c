@@ -49,10 +49,8 @@ void update_balance(void* tid) {
 
 static void * run_thread(void* arg) {
   struct thread_info *tinfo = arg;
-  char *uname;
+  char *uname;  /* Have to return a value for create_thread to work */
 
-  //uname = strdup(tinfo->thread_name);
-  
   printf("Thread number %d has been created.\n", tinfo->thread_num);
   printf("Thread Name: %s\n", tinfo->thread_name);
   printf("Thread ID: %lu\n\n", tinfo->thread_id);
