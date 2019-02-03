@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Chris Humphreys
- * @date 01 Feb 2019
+ * @date 01 Feb 2.019
  * @brief Main Driver for C Threads Program
  *
  * Main driver for the threading assignment for CS485, which simply demonstrates

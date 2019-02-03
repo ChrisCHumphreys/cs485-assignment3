@@ -1,0 +1,14 @@
+Thread number 1 has been created.
+Thread Name: Alpha
+Thread ID: 140632211322624
+
+Alpha Team Go!
+Alpha Team Balance after update is: 10
+
+Thread number 2 has been created.
+Thread Name: Bravo
+Thread ID: 140632202929920
+
+Bravo Team Go!
+Bravo Team Balance after update is: 20
+
