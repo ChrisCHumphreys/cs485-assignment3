@@ -41,4 +41,10 @@
   of a struct to hold all of my threads different data and pass around the
   threads themselves using this struct.  This allowed me to be able to answer
   questions 1 and 2 from the homework using the same threads, just with
-  different attributes. 
+  different attributes.  While I wish I could say I thought of this, I have to
+  admit that I relied heavily on the examples in the pthread man pages, which
+  almost walked me through the whole thing. 
+  
+  I only had my threads update the totals 10 times each in order to maintain
+  readability but this can be easily changed by updating line 18 of thread.c,
+  and changing the value of MAX to whatever amount you would prefer.
