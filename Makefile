@@ -10,6 +10,7 @@ CC=gcc
 # Debugging flag -g
 DEBUG=-g
 
+
 # Memory Mangagment Flags
 MEMFLAGS=-fsanitize=address -fno-omit-frame-pointer
 
@@ -19,6 +20,9 @@ TARGET=threads
 # Compile with all errors and warnings
 CFLAGS=-c -Wall $(DEBUG)
 
+# Need -lpthread to compile on cs1
+LDFLAGS=-lpthread
+
 # Makefile syntax:
 # target: dependencies
 #(tab) system command(s)
@@ -26,7 +30,7 @@ CFLAGS=-c -Wall $(DEBUG)
 all: $(TARGET)
 
 $(TARGET): main.c threads.o
-	$(CC) main.c -o $(TARGET) $(DEBUG) $(MEMFLAGS)
+	$(CC) main.c -o $(TARGET) $(DEBUG) $(MEMFLAGS) $(LDFLAGS)
 
 threads.o: threads.c threads.h
 	$(CC) $(CFLAGS) $(MEMFLAGS) threads.h
