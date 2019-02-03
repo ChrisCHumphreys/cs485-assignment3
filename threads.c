@@ -1,11 +1,12 @@
 /**
- * Library of functions for creating and demonstrating the use of threading in
- * C.
+ * Function definitions and logic for assignment 3 in CS485.  This library of
+ * functions allows the user to utilize two threads and see how they con work
+ * together and against each other.
  *
  * @author Chris Humphreys
  * @file threads.c
  * @date 02/01/19
- * @brief Library for interactive shell and batch file processor.
+ * @brief Demonstration of multi-threading for CS485.
  */
 
 #include <stdio.h>
@@ -15,28 +16,30 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
-#define MAX 10
+#define MAX 10 /**< integer representing the number of times deposits and
+                  withdrawls should be made. */
 
-pthread_mutex_t the_mutex;
+pthread_mutex_t the_mutex; 
 pthread_cond_t condc, condp;
-int bank_account = 0;
+int bank_account = 0; /**< bank account balance */
 
-const int NUMBER_OF_THREADS = 2;
-int balance = 0;            /* Global balance variable */
+const int NUMBER_OF_THREADS = 2; /**< The number of threads */
+int balance = 0;            /**< Global balance variable */
 
-struct thread_info {         /* Used as argument to thread_start */
-  pthread_t thread_id;       /* ID returned by pthread_create() */
-  int       thread_num;      /* From NUMBER_OF_THREADS */
-  char      thread_name[32]; /* Arbitrary Name for testing */
-  int       mode;            /* 1 for question 1.  2 for question 2 */
+/** @struct thread_info
+ *  @brief Defines the threads we are using.
+ */
+struct thread_info {         /**< Used as argument to thread_start */
+  pthread_t thread_id;       /**< ID returned by pthread_create() */
+  int       thread_num;      /**< From NUMBER_OF_THREADS */
+  char      thread_name[32]; /**< Arbitrary Name for testing */
+  int       mode;            /**< 1 for question 1,  2 for question 2 */
 };
 
 void *producer(void *tid) {
-  struct thread_info *tinfo = tid;
-  int i;
+  struct thread_info *tinfo = tid; /**< a thread pointer */
 
-
-  for (i = 1; i <= MAX; i++) {
+  for (int i = 1; i <= MAX; i++) {
     pthread_mutex_lock(&the_mutex);
     while(bank_account != 0) pthread_cond_wait(&condp, &the_mutex);
     bank_account = 100;

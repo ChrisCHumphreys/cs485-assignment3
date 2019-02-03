@@ -1,3 +1,6 @@
 threads
 *.gch
 *.o
+Doxyfile
+html/
+latex/

@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Chris Humphreys
- * @date 01 Feb 2.019
+ * @date 01 Feb 2019
  * @brief Main Driver for C Threads Program
  *
  * Main driver for the threading assignment for CS485, which simply demonstrates
@@ -13,6 +13,13 @@
 #include <unistd.h>
 #include "threads.h"
 
+/**
+ * Launcher for threads assignment.  Takes in command line arguments and and
+ * sets mode before turning over control to the threads library.  Enusres that
+ * correct number of command line arguments are given.
+ *
+ * @brief Launcher for assignment 3.
+ */
 int main (int argc, char * argv[]) {
   int flags, opt;
   int times_to_run;
@@ -36,7 +43,7 @@ int main (int argc, char * argv[]) {
       exit(EXIT_FAILURE);
     }
   }
-  
+
   int mode_selector = flags;
   create_and_run_threads(mode_selector);
   exit(EXIT_SUCCESS);
