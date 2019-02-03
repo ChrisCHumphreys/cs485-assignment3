@@ -40,7 +40,8 @@ void *producer(void *tid) {
     pthread_mutex_lock(&the_mutex);
     while(bank_account != 0) pthread_cond_wait(&condp, &the_mutex);
     bank_account = 100;
-    printf("%s did it's thing\nCurrent account balance: %d\n\n", tinfo->thread_name, bank_account);
+    printf("%s did it's thing\nCurrent account balance: %d\n\n",
+           tinfo->thread_name, bank_account);
     pthread_cond_signal(&condc);
     pthread_mutex_unlock(&the_mutex);
   }
@@ -55,16 +56,13 @@ void *consumer(void *tid) {
     pthread_mutex_lock(&the_mutex);
     while(bank_account == 0) pthread_cond_wait(&condc, &the_mutex);
     bank_account = 0;
-    printf("%s did it's thing\nCurrent account balance: %d\n\n", tinfo->thread_name, bank_account);
+    printf("%s did it's thing\nCurrent account balance: %d\n\n",
+           tinfo->thread_name, bank_account);
     pthread_cond_signal(&condp);
     pthread_mutex_unlock(&the_mutex);
   }
   pthread_exit(0);
 }
-
-/* Update Balance function: Reads the balance, increases it by 10, sleeps, and
-   then updates the balance.  When usleep is set to 1 the value does not always
-   update properly. */
 
 void update_balance(void* tid) {
   struct thread_info *tinfo = tid;
