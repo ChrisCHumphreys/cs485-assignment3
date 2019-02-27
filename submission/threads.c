@@ -19,7 +19,7 @@
 #define MAX 10 /**< integer representing the number of times deposits and
                   withdrawls should be made. */
 
-pthread_mutex_t the_mutex, bal_mutex; 
+pthread_mutex_t the_mutex; 
 pthread_cond_t condc, condp;
 int bank_account = 0; /**< bank account balance */
 
@@ -71,16 +71,15 @@ void update_balance(void* tid) {
   struct thread_info *tinfo = tid;
   printf("%s Team Go!\n", tinfo->thread_name);
 
-  pthread_mutex_lock(&bal_mutex);  // Mutex locks out other threads while in 
-                                   // critical region
   int read_balance = balance;
   read_balance += 10;
 
-  usleep(1);
+  /* If usleep is set to 1, results are inconsistent because of a race
+     condition */
+
+  /* usleep(); */
 
   balance = read_balance;
-
-  pthread_mutex_unlock(&bal_mutex); // Unlocks after out of critical region
 
   printf("%s Team Balance after update is: %d\n\n",
 	tinfo->thread_name, balance);

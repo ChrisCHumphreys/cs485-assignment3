@@ -1,0 +1,72 @@
+Thread number 1 has been created.
+Thread Name: Deposit Thread
+Thread ID: 140506297267968
+
+thread name: Deposit Thread
+
+Deposit Thread did it's thing
+Current account balance: 100
+
+Thread number 2 has been created.
+Thread Name: Withdraw Thread
+Thread ID: 140506288875264
+
+thread name: Withdraw Thread
+
+Withdraw Thread did it's thing
+Current account balance: 0
+
+Deposit Thread did it's thing
+Current account balance: 100
+
+Withdraw Thread did it's thing
+Current account balance: 0
+
+Deposit Thread did it's thing
+Current account balance: 100
+
+Withdraw Thread did it's thing
+Current account balance: 0
+
+Deposit Thread did it's thing
+Current account balance: 100
+
+Withdraw Thread did it's thing
+Current account balance: 0
+
+Deposit Thread did it's thing
+Current account balance: 100
+
+Withdraw Thread did it's thing
+Current account balance: 0
+
+Deposit Thread did it's thing
+Current account balance: 100
+
+Withdraw Thread did it's thing
+Current account balance: 0
+
+Deposit Thread did it's thing
+Current account balance: 100
+
+Withdraw Thread did it's thing
+Current account balance: 0
+
+Deposit Thread did it's thing
+Current account balance: 100
+
+Withdraw Thread did it's thing
+Current account balance: 0
+
+Deposit Thread did it's thing
+Current account balance: 100
+
+Withdraw Thread did it's thing
+Current account balance: 0
+
+Deposit Thread did it's thing
+Current account balance: 100
+
+Withdraw Thread did it's thing
+Current account balance: 0
+
