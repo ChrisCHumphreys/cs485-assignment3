@@ -37,6 +37,17 @@
    2. For question 2 from homework fun `./threads -2`.
    
 ## Design Decisions
+
+  For question 1, to resolve the race condition between the two threads, I added
+  a mutex that would ensure that only one thread could be in the critical region
+  at a time.  This was a simple matter of creating a mutex and then locking and
+  unlocking it at the appropriate time.  You will also notice that the printing 
+  for both happens after all the updating is done.  I intentionally left the 
+  print statements out of the mutex as these are not areas that are not parts
+  of the the critical regions of the threads.  It does make the output a little
+  strange though in that the printing happens after the updates are done for 
+  both threads.
+
   The biggest decision I made in terms of design for this program was making use
   of a struct to hold all of my threads different data and pass around the
   threads themselves using this struct.  This allowed me to be able to answer
